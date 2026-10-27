@@ -7,8 +7,7 @@
 ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝╚══════╝
 ```
 
-[![Cybersecurity Projects](https://img.shields.io/badge/Cybersecurity--Projects-Foundations-red?style=flat&logo=github)](https://github.com/CarterPerez-dev/Cybersecurity-Projects/tree/main/PROJECTS/foundations/http-headers-scanner)
-[![Tier: Foundations](https://img.shields.io/badge/Tier-Foundations-00C9A7?style=flat&logo=bookstack&logoColor=white)](https://github.com/CarterPerez-dev/Cybersecurity-Projects/tree/main/PROJECTS/foundations)
+
 [![Python 3.13](https://img.shields.io/badge/Python-3.13-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org)
 [![License: AGPLv3](https://img.shields.io/badge/License-AGPL_v3-purple.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![Tests](https://img.shields.io/badge/tests-pytest-0A9EDC?style=flat&logo=pytest&logoColor=white)](https://pytest.org)
@@ -17,10 +16,6 @@
 
 > Fetch a URL once and grade its HTTP security headers A through F using the same weighted-rubric model as Mozilla Observatory.
 
-*This is a quick overview, security theory, architecture, and full walkthroughs are in the [learn modules](#learn).*
-
-> [!NOTE]
-> **Foundations tier**, this project is built for someone who has never written Python before. The source code is heavily commented as a teaching aid, the `learn/` folder explains every concept from zero, and the whole tool is one readable file. If you already know Python, the natural next step is [`PROJECTS/foundations/password-manager`](../password-manager), the hardest foundations project, which adds Argon2id, AES-GCM, and on-disk state.
 
 ## What It Does
 
@@ -54,9 +49,6 @@ just run -- https://example.com
 # Grade: B, Score: 85 / 100  (example.com is missing CSP and Permissions-Policy)
 ```
 
-> [!TIP]
-> This project uses [`just`](https://github.com/casey/just) as a command runner. Type `just` to see all available commands.
->
 > Install: `curl -sSf https://just.systems/install.sh | bash -s -- --to ~/.local/bin`
 
 ## Demo URLs
@@ -131,8 +123,6 @@ just run -- <url>  # scan a URL
 ## Requirements
 
 - **Python 3.13+**, the install script will check.
-- [`uv`](https://github.com/astral-sh/uv), modern Python package manager (auto-installed by `./install.sh`).
-- [`just`](https://github.com/casey/just), command runner (auto-installed by `./install.sh`).
 - A working internet connection at runtime (the scanner makes one real HTTPS request per scan, but the test suite mocks the network with `respx` and runs fully offline).
 
 No compilers, no system libraries. The project is one Python file plus tests.
@@ -157,14 +147,6 @@ This scanner is a teaching-scale version of tools that do the same job at produc
 - **[securityheaders.com](https://securityheaders.com)**, simpler UI, same idea.
 - **[nmap http-security-headers script](https://nmap.org/nsedoc/scripts/http-security-headers.html)**, for command-line workflows.
 
-Once you understand how this scanner makes decisions, those tools become readable instead of magical. The [04-CHALLENGES.md](learn/04-CHALLENGES.md) module includes ideas for growing this project toward what Observatory does.
 
-## See Also
 
-- [`PROJECTS/foundations/hash-identifier`](../hash-identifier), the easier foundations project, pure logic and no network at all.
-- [`PROJECTS/foundations/password-manager`](../password-manager), the hardest foundations project, covers Argon2id, AES-GCM, and on-disk vaults.
-- [`PROJECTS/advanced/bug-bounty-platform`](../../advanced/bug-bounty-platform), what a serious web-security tool looks like once it grows up.
 
-## License
-
-AGPL 3.0
